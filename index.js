@@ -5,10 +5,17 @@ var app = express();
 var routing = require('./routing.js');
 app.use('/routing',routing)
 
+app.set('view engine','pug')
+app.set('views','./views');
+
 app.get('/', (req, res) => {
     res.send("Hello World");
     
 });
+
+app.get('/home', (req, res) =>{
+    res.render('home',{user : {name: "Kalpesh", age : 36}});
+})
 
 app.get('/:para', (req, res) => {
     res.send("Hello World with id " + req.params.para);

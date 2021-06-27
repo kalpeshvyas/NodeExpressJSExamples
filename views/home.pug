@@ -1,0 +1,12 @@
+doctype html
+html 
+    head 
+        title=  "Hello Buddy"
+    body 
+        include ./header.pug
+        if(user)
+            p.greetings#people Hello #{user.name}
+            | Welcome again to our tutorial website. 
+        else 
+            p.greetings#signup Please sign-up our website for learning more. a(href = "/sign_up") Sign Up
+        include ./footer.pug
